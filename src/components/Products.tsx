@@ -15,6 +15,7 @@ import { formatINR, getCourseById } from "../data/courses";
 import { useCart } from "../context/CartContext";
 import { CourseCatalog } from "./CourseCatalog";
 import "./Products.css";
+import { useNavigate } from "react-router-dom";
 
 const coursesTaking = [
   { icon: Code2, name: "Web Development", hours: "42 hours spent", status: "In progress" },
@@ -72,9 +73,17 @@ const skills = {
 
 export function Products() {
   const { addMembership, addCourse, buyNow } = useCart();
+  const navigate = useNavigate();
 
   const scrollToCatalog = (hash = "#catalog") => {
     document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleBuyNow = (courseId: string) => {
+    const course = getCourseById(courseId);
+    if (!course) return;
+    buyNow(course);
+    navigate("/place-order");
   };
 
   return (
@@ -283,7 +292,7 @@ export function Products() {
                         <button
                           type="button"
                           className="course-btn course-btn--solid"
-                          onClick={() => buyNow(course)}
+                          onClick={() => handleBuyNow(c.courseId)}
                         >
                           Buy now
                         </button>

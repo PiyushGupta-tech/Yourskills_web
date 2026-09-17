@@ -1,10 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { formatINR } from "../data/courses";
 import { useCart } from "../context/CartContext";
 import "./CartDrawer.css";
 
 export function CartDrawer() {
+  const navigate = useNavigate();
   const {
     items,
     isCartOpen,
@@ -12,9 +14,13 @@ export function CartDrawer() {
     removeItem,
     updateQty,
     subtotal,
-    openCheckout,
     count,
   } = useCart();
+
+  const goPlaceOrder = () => {
+    closeCart();
+    navigate("/place-order");
+  };
 
   return (
     <AnimatePresence>
@@ -110,7 +116,7 @@ export function CartDrawer() {
                   <span>Subtotal</span>
                   <strong>{formatINR(subtotal)}</strong>
                 </div>
-                <button type="button" className="btn btn--orange cart-checkout-btn" onClick={openCheckout}>
+                <button type="button" className="btn btn--orange cart-checkout-btn" onClick={goPlaceOrder}>
                   Place order
                 </button>
               </footer>

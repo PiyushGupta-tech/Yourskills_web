@@ -31,14 +31,11 @@ export type Order = {
 type CartContextValue = {
   items: CartItem[];
   isCartOpen: boolean;
-  isCheckoutOpen: boolean;
   lastOrder: Order | null;
   count: number;
   subtotal: number;
   openCart: () => void;
   closeCart: () => void;
-  openCheckout: () => void;
-  closeCheckout: () => void;
   addCourse: (course: Course) => void;
   addMembership: () => void;
   buyNow: (course: Course) => void;
@@ -67,7 +64,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     typeof window === "undefined" ? [] : loadItems(),
   );
   const [isCartOpen, setCartOpen] = useState(false);
-  const [isCheckoutOpen, setCheckoutOpen] = useState(false);
   const [lastOrder, setLastOrder] = useState<Order | null>(null);
 
   useEffect(() => {
@@ -126,7 +122,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       },
     ]);
     setCartOpen(false);
-    setCheckoutOpen(true);
   }, []);
 
   const removeItem = useCallback((id: string) => {
@@ -156,7 +151,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       };
       setLastOrder(order);
       setItems([]);
-      setCheckoutOpen(false);
       setCartOpen(false);
       return order;
     },
@@ -169,17 +163,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return {
       items,
       isCartOpen,
-      isCheckoutOpen,
       lastOrder,
       count,
       subtotal,
       openCart: () => setCartOpen(true),
       closeCart: () => setCartOpen(false),
-      openCheckout: () => {
-        setCartOpen(false);
-        setCheckoutOpen(true);
-      },
-      closeCheckout: () => setCheckoutOpen(false),
       addCourse,
       addMembership,
       buyNow,
@@ -191,7 +179,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [
     items,
     isCartOpen,
-    isCheckoutOpen,
     lastOrder,
     addCourse,
     addMembership,
@@ -211,7 +198,6 @@ export function useCart() {
   return ctx;
 }
 
-/** Helper for validating known course ids after hydrate */
 export function knownCourseIds() {
   return new Set(COURSES.map((c) => c.id));
 }

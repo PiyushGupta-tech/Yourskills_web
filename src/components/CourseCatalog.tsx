@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ShoppingCart, Zap } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CATEGORIES,
   formatINR,
@@ -18,8 +19,14 @@ type Props = {
 export function CourseCatalog({ initialCategory = "All" }: Props) {
   const [category, setCategory] = useState<Category>(initialCategory);
   const { addCourse, buyNow } = useCart();
+  const navigate = useNavigate();
 
   const courses = useMemo(() => getCoursesByCategory(category), [category]);
+
+  const handleBuyNow = (course: Course) => {
+    buyNow(course);
+    navigate("/place-order");
+  };
 
   return (
     <div className="catalog" id="catalog">
@@ -66,7 +73,7 @@ export function CourseCatalog({ initialCategory = "All" }: Props) {
               course={course}
               index={i}
               onAdd={() => addCourse(course)}
-              onBuy={() => buyNow(course)}
+              onBuy={() => handleBuyNow(course)}
             />
           ))}
         </motion.div>

@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import { MouseParallax } from "./MouseParallax";
 import "./Hero.css";
 
 export function Hero() {
   const { openCart, count } = useCart();
+  const { user, logout } = useAuth();
 
   return (
     <header className="hero" id="home">
@@ -35,20 +38,31 @@ export function Hero() {
       </div>
 
       <div className="hero__top">
-        <a href="#home" className="hero__brand">
+        <Link to="/" className="hero__brand">
           YOURSKILLS
-        </a>
+        </Link>
         <div className="hero__auth">
           <button type="button" className="hero__cart" onClick={openCart} aria-label="Open cart">
             <ShoppingBag size={18} />
             {count > 0 && <span>{count}</span>}
           </button>
-          <a href="#pricing" className="hero__login">
-            Log In
-          </a>
-          <a href="#catalog" className="hero__signup">
-            Sign Up +
-          </a>
+          {user ? (
+            <>
+              <span className="hero__user">Hi, {user.name.split(" ")[0]}</span>
+              <button type="button" className="hero__login" onClick={logout}>
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="hero__login">
+                Log In
+              </Link>
+              <Link to="/login?mode=signup" className="hero__signup">
+                Sign Up +
+              </Link>
+            </>
+          )}
         </div>
       </div>
 
