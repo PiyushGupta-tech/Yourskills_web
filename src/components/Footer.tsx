@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "./Footer.css";
 
@@ -26,12 +27,15 @@ export function Footer() {
             <button type="button" className="footer__cart-btn" onClick={openCart}>
               Cart
             </button>
+            <Link to="/privacy">Privacy Policy</Link>
           </div>
         </div>
       </div>
       <div className="container footer__bottom">
         <p>© {new Date().getFullYear()} YourSkills Education. All rights reserved.</p>
-        <p className="footer__credit">Designed with motion-first learning energy.</p>
+        <Link to="/privacy" className="footer__credit">
+          Privacy Policy
+        </Link>
       </div>
     </footer>
   );

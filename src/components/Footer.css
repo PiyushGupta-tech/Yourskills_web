@@ -71,6 +71,15 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
+.footer__credit {
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s;
+}
+
+.footer__credit:hover {
+  color: #fff;
+}
+
 @media (max-width: 640px) {
   .footer__cols {
     gap: 2rem;

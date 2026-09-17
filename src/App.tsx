@@ -1,28 +1,38 @@
-import { Benefits } from "./components/Benefits";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { CartDrawer } from "./components/CartDrawer";
 import { CheckoutModal } from "./components/CheckoutModal";
-import { FloatingNav } from "./components/FloatingNav";
-import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import { Impact } from "./components/Impact";
-import { Products } from "./components/Products";
-import { StreakCalendar } from "./components/StreakCalendar";
-import { Testimonials } from "./components/Testimonials";
 import { CartProvider } from "./context/CartContext";
+import { HomePage } from "./pages/HomePage";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import "./App.css";
+
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <CartProvider>
       <div className="app">
-        <Hero />
-        <StreakCalendar />
-        <Impact />
-        <Benefits />
-        <Products />
-        <Testimonials />
-        <Footer />
-        <FloatingNav />
+        <ScrollManager />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+        </Routes>
         <CartDrawer />
         <CheckoutModal />
       </div>
