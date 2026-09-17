@@ -1,0 +1,497 @@
+.products {
+  padding: 5.5rem 0 4rem;
+  background: #f4f1ec;
+  color: #0a0a0a;
+}
+
+.products__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.products__eyebrow--light {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.products__plus h2,
+.products__dashboard h3,
+.products__certs h3,
+.products__careers h3,
+.products__all h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.products__plus h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  max-width: 18ch;
+}
+
+.products__lead {
+  margin-top: 1rem;
+  max-width: 40rem;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.products__bullets {
+  margin: 1.75rem 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.products__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+}
+
+.products__bullets svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--accent-orange);
+}
+
+.products__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.products__price {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.products__price-note {
+  color: #777;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.products__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn--outline-dark {
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  color: #0a0a0a;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn--outline-dark:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.products__subhead {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.products__plus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.products__plus-card {
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.products__plus-card span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.products__plus-card h4 {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.products__plus-card p {
+  font-size: 0.88rem;
+  color: #666;
+}
+
+.products__dashboard {
+  margin-top: 4rem;
+  padding: 2.25rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(184, 77, 255, 0.25), transparent 50%),
+    linear-gradient(160deg, #141414, #0a0a0a);
+  color: #fff;
+  display: grid;
+  gap: 2rem;
+}
+
+.products__dash-copy h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  max-width: 18ch;
+  margin-bottom: 0.75rem;
+}
+
+.products__dash-copy p {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 36rem;
+}
+
+.products__link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--accent-lime);
+}
+
+.products__dash-panels {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+.products__panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 1.25rem;
+}
+
+.products__panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.products__panel-head h4 {
+  font-size: 1rem;
+}
+
+.products__panel-head span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.products__course-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.products__course-list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.65rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.products__course-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 90, 31, 0.15);
+  color: var(--accent-orange);
+}
+
+.products__course-list strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.products__course-list small {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+}
+
+.products__course-list em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--accent-yellow);
+}
+
+.products__course-list em.done {
+  color: var(--accent-lime);
+}
+
+.products__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.products__stats small {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.products__stats strong {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.products__stats em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--accent-lime);
+}
+
+.products__certs,
+.products__careers,
+.products__all {
+  margin-top: 4rem;
+}
+
+.products__certs h3,
+.products__careers h3,
+.products__all h3 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.65rem;
+}
+
+.products__certs > p,
+.products__careers > p {
+  color: #555;
+  max-width: 40rem;
+}
+
+.products__cert-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.products__cert-badges article {
+  padding: 1.35rem;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.products__cert-badges h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.products__cert-badges p {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.products__cert-badges small {
+  color: #777;
+}
+
+.products__career-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.products__career-card {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products__career-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.products__career-card svg {
+  color: var(--accent-orange);
+  margin-bottom: 0.75rem;
+}
+
+.products__career-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.products__career-card p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.products__cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.products__cat {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.products__cat:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.products__career-price {
+  font-family: var(--font-display);
+  font-size: 1.15rem !important;
+  color: #0a0a0a !important;
+  margin: 0.65rem 0 0.75rem;
+}
+
+.products__career-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.products__skill-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+}
+
+.products__skill-link:hover span {
+  color: var(--accent-orange);
+}
+
+.products__link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.products__skill-hero button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent-lime);
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+}
+
+.products__skills {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 1.25rem;
+}
+
+.products__skill-hero {
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #1a1028, #0a0a0a);
+  color: #fff;
+}
+
+.products__skill-hero h4 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.products__skill-hero p {
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1rem;
+}
+
+.products__skill-hero a {
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+
+.products__skill-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.products__skill-cols h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.products__skill-cols li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.92rem;
+}
+
+.products__skill-cols em {
+  font-style: normal;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+@media (max-width: 960px) {
+  .products__plus-grid,
+  .products__dash-panels,
+  .products__cert-badges,
+  .products__career-grid,
+  .products__skills,
+  .products__skill-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .products__dashboard {
+    padding: 1.35rem;
+  }
+
+  .products__price {
+    font-size: 2.4rem;
+  }
+}
