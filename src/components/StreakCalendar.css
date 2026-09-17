@@ -18,9 +18,16 @@
   pointer-events: none;
 }
 
-.streak__inner {
+.streak__layout {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.streak__inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -113,6 +120,187 @@
   margin-top: 0.35rem;
 }
 
+.streak__visual {
+  position: relative;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+.streak__photo {
+  width: min(320px, 78%);
+  aspect-ratio: 4 / 5;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(255, 90, 40, 0.22);
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 1;
+}
+
+.streak__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.streak__photo-fade {
+  position: absolute;
+  inset: auto 0 0;
+  height: 45%;
+  background: linear-gradient(transparent, rgba(20, 10, 0, 0.35));
+}
+
+.streak__mini-cal {
+  position: absolute;
+  right: 2%;
+  bottom: 6%;
+  z-index: 3;
+  width: 210px;
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.streak__mini-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.streak__mini-head strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.streak__mini-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.2rem;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #999;
+  text-align: center;
+}
+
+.streak__mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.streak__mini-grid span {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #222;
+}
+
+.streak__mini-grid .is-off {
+  color: #ccc;
+}
+
+.streak__mini-grid .is-done {
+  background: rgba(255, 90, 31, 0.15);
+  color: #ff5a1f;
+  font-weight: 600;
+}
+
+.streak__mini-grid .is-today {
+  background: radial-gradient(circle at 30% 25%, #ffb347, #ff5a1f 60%, #ff2d00);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(255, 70, 20, 0.4);
+}
+
+.streak__flame {
+  position: absolute;
+  left: 4%;
+  top: 10%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 18px;
+  background: #0a0a0a;
+  color: #fff;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.streak__flame-icon {
+  width: 28px;
+  height: 34px;
+  background:
+    radial-gradient(circle at 50% 80%, #ffeb3b, transparent 45%),
+    radial-gradient(circle at 40% 40%, #ff9800, transparent 50%),
+    radial-gradient(ellipse at 50% 20%, #ff5722, #ff3d00 70%);
+  clip-path: polygon(50% 0%, 72% 28%, 90% 55%, 70% 100%, 50% 88%, 30% 100%, 10% 55%, 28% 28%);
+  filter: drop-shadow(0 0 10px rgba(255, 90, 31, 0.7));
+}
+
+.streak__flame strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+.streak__flame small {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.streak__hours {
+  position: absolute;
+  left: 8%;
+  bottom: 18%;
+  z-index: 4;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(255, 100, 40, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.streak__hours strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.streak__hours small {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #777;
+}
+
+@media (max-width: 900px) {
+  .streak__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .streak__visual {
+    min-height: 360px;
+    order: -1;
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 560px) {
   .streak__card {
     padding: 1rem 0.55rem;
@@ -130,5 +318,21 @@
   .streak__capsule {
     height: 40px;
     bottom: 0;
+  }
+
+  .streak__mini-cal {
+    width: 170px;
+    right: 0;
+    padding: 0.75rem;
+  }
+
+  .streak__flame {
+    left: 0;
+    top: 4%;
+  }
+
+  .streak__hours {
+    left: 0;
+    bottom: 8%;
   }
 }

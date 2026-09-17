@@ -24,6 +24,7 @@ export type Course = {
   description: string;
   tags: string[];
   accent: string;
+  image: string;
 };
 
 export const CATEGORIES: Category[] = [
@@ -54,6 +55,7 @@ export const COURSES: Course[] = [
     description: "Build prompts, fine-tune workflows, and ship AI features responsibly.",
     tags: ["LLM", "Prompting", "Ethics"],
     accent: "#c44dff",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
   },
   {
     id: "ml-engineer-path",
@@ -69,6 +71,7 @@ export const COURSES: Course[] = [
     description: "From supervised models to production ML pipelines and evaluation.",
     tags: ["Python", "Scikit", "MLOps"],
     accent: "#c44dff",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
   },
   {
     id: "deep-learning-vision",
@@ -83,6 +86,7 @@ export const COURSES: Course[] = [
     description: "CNNs, transfer learning, and real-world vision projects.",
     tags: ["PyTorch", "CNN", "Vision"],
     accent: "#c44dff",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=500&fit=crop",
   },
   {
     id: "fullstack-web",
@@ -98,6 +102,7 @@ export const COURSES: Course[] = [
     description: "HTML, CSS, JS, React, and Node — ship production web apps.",
     tags: ["React", "Node", "API"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop",
   },
   {
     id: "python-web",
@@ -112,6 +117,7 @@ export const COURSES: Course[] = [
     description: "Django/Flask backends with clean APIs and auth.",
     tags: ["Python", "Django", "REST"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop",
   },
   {
     id: "nextjs-pro",
@@ -126,6 +132,7 @@ export const COURSES: Course[] = [
     description: "App Router, SSR, and typed UI systems for scale.",
     tags: ["Next.js", "TypeScript", "UI"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop",
   },
   {
     id: "data-science-pro",
@@ -141,6 +148,7 @@ export const COURSES: Course[] = [
     description: "Analytics, modeling, and storytelling with real datasets.",
     tags: ["Pandas", "SQL", "Viz"],
     accent: "#2de0c8",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
   },
   {
     id: "analytics-bi",
@@ -155,6 +163,7 @@ export const COURSES: Course[] = [
     description: "Dashboards, KPIs, and decision-ready reporting.",
     tags: ["BI", "Dashboards", "Excel"],
     accent: "#2de0c8",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
   },
   {
     id: "sql-mastery",
@@ -169,6 +178,7 @@ export const COURSES: Course[] = [
     description: "Queries, joins, windows, and performance patterns.",
     tags: ["SQL", "Postgres", "Analytics"],
     accent: "#2de0c8",
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=500&fit=crop",
   },
   {
     id: "cloud-engineer",
@@ -184,6 +194,7 @@ export const COURSES: Course[] = [
     description: "AWS core services, networking, IAM, and deploy pipelines.",
     tags: ["AWS", "CI/CD", "Linux"],
     accent: "#ff5a1f",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
   },
   {
     id: "devops-kubernetes",
@@ -198,6 +209,7 @@ export const COURSES: Course[] = [
     description: "Containers, clusters, observability, and release safety.",
     tags: ["Docker", "K8s", "SRE"],
     accent: "#ff5a1f",
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=500&fit=crop",
   },
   {
     id: "aws-saa-prep",
@@ -212,6 +224,7 @@ export const COURSES: Course[] = [
     description: "Exam-focused labs for SAA with practice tests included.",
     tags: ["AWS", "SAA", "Cert"],
     accent: "#ff5a1f",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
   },
   {
     id: "ux-ui-design",
@@ -226,6 +239,7 @@ export const COURSES: Course[] = [
     description: "Research, wireframes, and polished product interfaces.",
     tags: ["Figma", "UX", "Prototype"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
   },
   {
     id: "digital-illustration",
@@ -240,6 +254,7 @@ export const COURSES: Course[] = [
     description: "Character art, color theory, and portfolio pieces.",
     tags: ["Illustration", "Color", "Portfolio"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1618005182384-a83b8c63b95f?w=800&h=500&fit=crop",
   },
   {
     id: "video-editing-pro",
@@ -254,6 +269,7 @@ export const COURSES: Course[] = [
     description: "Cuts, motion, sound design, and publish-ready edits.",
     tags: ["Editing", "Motion", "Audio"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=500&fit=crop",
   },
   {
     id: "music-production",
@@ -268,6 +284,7 @@ export const COURSES: Course[] = [
     description: "DAW workflow, mixing basics, and finishing tracks.",
     tags: ["DAW", "Mixing", "Creative"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=500&fit=crop",
   },
   {
     id: "psychology-of-learning",
@@ -282,6 +299,7 @@ export const COURSES: Course[] = [
     description: "Motivation, memory, and habit systems for better study.",
     tags: ["Psychology", "Habits", "Focus"],
     accent: "#ffe14d",
+    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=500&fit=crop",
   },
   {
     id: "sociology-modern",
@@ -296,6 +314,7 @@ export const COURSES: Course[] = [
     description: "Culture, institutions, and contemporary social change.",
     tags: ["Society", "Culture", "Research"],
     accent: "#ffe14d",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop",
   },
   {
     id: "economics-fundamentals",
@@ -310,6 +329,7 @@ export const COURSES: Course[] = [
     description: "Micro & macro concepts with real market examples.",
     tags: ["Economics", "Markets", "Policy"],
     accent: "#ffe14d",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop",
   },
   {
     id: "physics-visual",
@@ -324,6 +344,7 @@ export const COURSES: Course[] = [
     description: "Mechanics and waves with simulation-first teaching.",
     tags: ["Physics", "Labs", "Visual"],
     accent: "#c8f542",
+    image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=500&fit=crop",
   },
   {
     id: "chemistry-core",
@@ -338,6 +359,7 @@ export const COURSES: Course[] = [
     description: "Atomic structure, bonding, and reaction pathways.",
     tags: ["Chemistry", "Reactions", "Lab"],
     accent: "#c8f542",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=500&fit=crop",
   },
   {
     id: "biology-systems",
@@ -352,6 +374,7 @@ export const COURSES: Course[] = [
     description: "Cells to systems with clinical case storytelling.",
     tags: ["Biology", "Anatomy", "Health"],
     accent: "#c8f542",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&h=500&fit=crop",
   },
   {
     id: "calculus-mastery",
@@ -366,6 +389,7 @@ export const COURSES: Course[] = [
     description: "Limits, derivatives, integrals with intuitive visuals.",
     tags: ["Calculus", "Proofs", "Practice"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=500&fit=crop",
   },
   {
     id: "linear-algebra",
@@ -380,6 +404,7 @@ export const COURSES: Course[] = [
     description: "Vectors, matrices, and eigenthinking for AI builders.",
     tags: ["Matrices", "Vectors", "ML Math"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=500&fit=crop",
   },
   {
     id: "statistics-decision",
@@ -394,6 +419,7 @@ export const COURSES: Course[] = [
     description: "Probability, inference, and experiment design.",
     tags: ["Stats", "Probability", "A/B"],
     accent: "#3d8bff",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
   },
   {
     id: "creative-writing",
@@ -408,6 +434,7 @@ export const COURSES: Course[] = [
     description: "Voice, structure, and publishing-ready drafts.",
     tags: ["Writing", "Story", "Voice"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=500&fit=crop",
   },
   {
     id: "critical-thinking",
@@ -422,6 +449,7 @@ export const COURSES: Course[] = [
     description: "Argue clearly, spot fallacies, and communicate with impact.",
     tags: ["Logic", "Debate", "Clarity"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=500&fit=crop",
   },
   {
     id: "digital-marketer",
@@ -437,6 +465,7 @@ export const COURSES: Course[] = [
     description: "SEO, funnels, content systems, and growth experiments.",
     tags: ["Marketing", "SEO", "Growth"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efebc9?w=800&h=500&fit=crop",
   },
   {
     id: "project-management",
@@ -451,6 +480,7 @@ export const COURSES: Course[] = [
     description: "Agile delivery, stakeholder maps, and PMI-aligned practice.",
     tags: ["Agile", "PMI", "Delivery"],
     accent: "#ff4db8",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
   },
 ];
 
